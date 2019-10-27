@@ -17,12 +17,13 @@ def Voronoy(width, height, num_cells):
 	imgx, imgy = diagrama.size # Método responsável por retornar o tamanho da imagem. O tamanho retornado é uma 2-tupla (width, height)
 	#Os pixeis no eixo x estão rotulados da seguinte forma: 0, 1, 2, ..., imgx - 1.
 	#O mesmo vale para os pixeis do eixo y.
-	nx = [] #list responsável por guardar todos os objetos site presentes no Diagrama de Voronoy
-	ny = []
-	nred = []
-	ngreen = []
-	nblue = []
-	for i in range(num_cells): #Em termos de eficiência, xrange() é melhor do que range(). 
+	nx = [] #list responsável por guardar as coordenadas x de todos os sítios de Voronoy presentes na imagem em questão.
+	ny = [] #list responsável por guardar as coordenadas y de todos os sítios de Voronoy presentes na imagem em questão.
+	nred = [] #list responsável por guardar a componente R (vermelha/red) da cor que será usada pra colorir cada célula de Voronoy.
+	ngreen = [] #list responsável por guardar a componente G (verde/green) da cor que será usada pra colorir cada célula de Voronoy.
+	nblue = [] #list responsável por guardar a componente B (azul/blue) da cor que será usada pra colorir cada célula de Voronoy.
+	for i in range(num_cells): 
+		# A geracao das coordenadas dos sítios de Voronoy, bem como de suas respectivas cores é feita de forma aleatória.
 		nx.append(random.randrange(imgx))
 		ny.append(random.randrange(imgy))
 		nred.append(random.randrange(256))
